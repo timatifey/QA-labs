@@ -16,4 +16,9 @@ public class FeedPageImpl extends Page implements FeedPage {
     public boolean isLoaded() {
         return false;
     }
+
+    @Override
+    public MessagePage openMessagePage() {
+        return null;
+    }
 }
