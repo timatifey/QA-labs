@@ -11,6 +11,6 @@ import page.LoginPageImpl;
 
 public class SendMessageTest {
     private final WebDriver driver = getWebDriver();
-    private final LoginPage loginPage = new LoginPageImpl(driver);
-    private final DialogPage dialogPage = new DialogPageImpl(driver);
+    private final LoginPage loginPage = new LoginPageImpl();
+    private final DialogPage dialogPage = new DialogPageImpl();
 }

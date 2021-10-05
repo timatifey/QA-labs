@@ -6,8 +6,7 @@ import page.base.Page;
 
 public class DialogPageImpl extends Page implements DialogPage {
 
-    public DialogPageImpl(WebDriver driver) {
-        super(driver);
+    public DialogPageImpl() {
     }
 
     @Override

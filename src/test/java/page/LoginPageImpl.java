@@ -6,8 +6,7 @@ import page.base.Page;
 
 public class LoginPageImpl extends Page implements LoginPage {
 
-    public LoginPageImpl(WebDriver driver) {
-        super(driver);
+    public LoginPageImpl() {
     }
 
     @Override

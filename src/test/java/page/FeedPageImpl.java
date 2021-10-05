@@ -6,8 +6,7 @@ import page.base.Page;
 
 public class FeedPageImpl extends Page implements LoadablePage {
 
-    protected FeedPageImpl(WebDriver driver) {
-        super(driver);
+    protected FeedPageImpl() {
     }
 
     @Override
