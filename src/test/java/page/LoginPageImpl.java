@@ -1,5 +1,6 @@
 package page;
 
+import org.openqa.selenium.By;
 import page.base.Page;
 
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -7,6 +8,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPageImpl extends Page implements LoginPage {
+
+    private final static String BASE_URL = "https://ok.ru";
+
+    private final static By EMAIL_FIELD = byXpath(".//*[@id='field_email']");
+    private final static By PASSWORD_FIELD = byXpath(".//*[@id='field_password']");
+    private final static By SIGN_IN_BUTTON = byXpath(".//*[@data-l='t,sign_in']");
 
     public LoginPageImpl() {
     }
@@ -21,28 +28,28 @@ public class LoginPageImpl extends Page implements LoginPage {
 
     @Override
     public void enterLogin(String login) {
-        $(byXpath(".//*[@id='field_email']")).setValue(login);
+        $(EMAIL_FIELD).setValue(login);
     }
 
     @Override
     public void enterPassword(String password) {
-        $(byXpath(".//*[@id='field_password']")).setValue(password);
+        $(PASSWORD_FIELD).setValue(password);
     }
 
     @Override
     public void clickLoginButton() {
-        $(byXpath(".//*[@data-l='t,sign_in']")).click();
+        $(SIGN_IN_BUTTON).click();
     }
 
     @Override
     public void load() {
-        open("https://ok.ru");
+        open(BASE_URL);
     }
 
     @Override
     public boolean isLoaded() {
-        return $(byXpath(".//*[@id='field_password']")).isDisplayed()
-                && $(byXpath(".//*[@id='field_email']")).isDisplayed()
-                && $(byXpath(".//*[@data-l='t,sign_in']")).isDisplayed();
+        return $(EMAIL_FIELD).isDisplayed()
+                && $(PASSWORD_FIELD).isDisplayed()
+                && $(SIGN_IN_BUTTON).isDisplayed();
     }
 }
