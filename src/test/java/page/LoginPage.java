@@ -4,7 +4,7 @@ import page.base.LoadablePage;
 
 public interface LoginPage extends LoadablePage {
 
-    boolean login(String login, String password);
+    FeedPage login(String login, String password);
 
     void enterLogin(String login);
 

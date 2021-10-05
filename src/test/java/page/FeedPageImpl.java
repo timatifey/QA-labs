@@ -1,10 +1,8 @@
 package page;
 
-import org.openqa.selenium.WebDriver;
-import page.base.LoadablePage;
 import page.base.Page;
 
-public class FeedPageImpl extends Page implements LoadablePage {
+public class FeedPageImpl extends Page implements FeedPage {
 
     protected FeedPageImpl() {
     }
