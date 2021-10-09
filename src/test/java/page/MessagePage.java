@@ -1,6 +1,10 @@
 package page;
 
-import page.base.LoadablePage;
+public interface MessagePage {
 
-public interface MessagePage extends LoadablePage {
+    void openDialog();
+
+    String sendTextMessage();
+
+    void checkMessageExists(String message);
 }

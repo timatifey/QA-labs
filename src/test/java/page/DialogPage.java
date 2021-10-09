@@ -1,8 +1,6 @@
 package page;
 
-import page.base.LoadablePage;
-
-public interface DialogPage extends LoadablePage {
+public interface DialogPage {
 
     void enterMessage(String msg);
 

@@ -4,13 +4,27 @@ import page.base.Page;
 
 public class MessagePageImpl extends Page implements MessagePage {
 
+    public MessagePageImpl() {
+        super();
+    }
+
     @Override
-    public void load() {
+    protected void check() {
 
     }
 
     @Override
-    public boolean isLoaded() {
-        return false;
+    public void openDialog() {
+
+    }
+
+    @Override
+    public String sendTextMessage() {
+        return null;
+    }
+
+    @Override
+    public void checkMessageExists(String message) {
+
     }
 }

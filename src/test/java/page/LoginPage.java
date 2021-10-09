@@ -1,8 +1,6 @@
 package page;
 
-import page.base.LoadablePage;
-
-public interface LoginPage extends LoadablePage {
+public interface LoginPage {
 
     FeedPage login(String login, String password);
 
