@@ -7,6 +7,8 @@ import page.LoginPage;
 import page.LoginPageImpl;
 import page.ProfilePage;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class Navigate {
 
     private final static By MICRO_MENU_BUTTON = By.xpath("//*[@id='hook_Block_ToolbarUserDropdown']/div/div[1]");
@@ -23,7 +25,9 @@ public class Navigate {
     }
 
     public static ProfilePage openProfilePage(final String username, final String password, String ulr) {
-        return doLogin(username, password).openPage(ulr);
+        FeedPage feedPage = doLogin(username, password);
+        open(ulr);
+        return feedPage.openPage(ulr);
     }
 
     public static void logOut() {
