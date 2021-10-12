@@ -25,6 +25,6 @@ public class FeedPageImpl extends Page implements FeedPage {
 
     @Override
     public ProfilePage openPage(String url) {
-        return null;
+        return new ProfilePageImpl();
     }
 }

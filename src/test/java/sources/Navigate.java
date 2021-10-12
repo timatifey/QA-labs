@@ -1,6 +1,7 @@
 package sources;
 
 import org.openqa.selenium.By;
+import page.DialogPage;
 import page.FeedPage;
 import page.LoginPage;
 import page.LoginPageImpl;
@@ -15,6 +16,14 @@ public class Navigate {
     public static FeedPage doLogin(final String username, final String password) {
         LoginPage loginPage = new LoginPageImpl();
         return loginPage.login(username, password);
+    }
+
+    public static DialogPage openMessagePage(final String username, final String password) {
+        return doLogin(username, password).openDialogPage();
+    }
+
+    public static ProfilePage openProfilePage(final String username, final String password, String ulr) {
+        return doLogin(username, password).openPage(ulr);
     }
 
     public static void logOut() {
