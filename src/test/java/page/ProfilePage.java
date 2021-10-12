@@ -2,5 +2,5 @@ package page;
 
 public interface ProfilePage {
 
-    public MessagePage openDialogWithThisProfile();
+    public DialogPage openDialogWithThisProfile();
 }

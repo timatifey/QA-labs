@@ -18,10 +18,8 @@ public class DialogPageImpl extends Page implements DialogPage {
     private final SelenideElement msgInputElement = $(".//*[@data-tsid='write_msg_input']");
     private final ElementsCollection msgCollection = $$(".//*[@data-tsid='message_text']");
 
-    private final String dialogUrl;
 
-    public DialogPageImpl(String dialogUrl) {
-        this.dialogUrl = dialogUrl;
+    public DialogPageImpl() {
     }
 
     @Override
@@ -30,12 +28,14 @@ public class DialogPageImpl extends Page implements DialogPage {
     }
 
     @Override
-    public void sendMessage() {
+    public String sendMessage() {
+        String msg = msgInputElement.getText();
         msgInputElement.pressEnter();
+        return msg;
     }
 
     @Override
-    public boolean isMessageExists(String author, String msg) {
+    public boolean isMessageExists(String msg) {
         for (SelenideElement selenideElement : msgCollection) {
             String value = selenideElement.getValue();
             if (msg.equals(value)) {

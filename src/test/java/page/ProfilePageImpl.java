@@ -18,8 +18,8 @@ public class ProfilePageImpl extends Page implements ProfilePage {
     }
 
     @Override
-    public MessagePage openDialogWithThisProfile() {
+    public DialogPage openDialogWithThisProfile() {
         Utils.click(MESSAGE_WITH_THIS_PROFILE);
-        return new MessagePageImpl();
+        return new DialogPageImpl();
     }
 }

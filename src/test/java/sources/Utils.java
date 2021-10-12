@@ -2,7 +2,6 @@ package sources;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
@@ -14,7 +13,7 @@ public class Utils {
         Selenide.$(locator).click();
     }
 
-    public static void sendKeys(By locator, final @NotNull String keys) {
+    public static void sendKeys(By locator, final String keys) {
         checkPresentAndVisibility("Can't send key in invisible element" + locator.toString(), locator);
         Selenide.$(locator).sendKeys(keys);
     }

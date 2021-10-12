@@ -4,8 +4,8 @@ public interface DialogPage {
 
     void enterMessage(String msg);
 
-    void sendMessage();
+    String sendMessage();
 
-    boolean isMessageExists(String author, String msg);
+    boolean isMessageExists(String msg);
 
 }
