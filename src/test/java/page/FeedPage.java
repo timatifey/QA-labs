@@ -2,7 +2,7 @@ package page;
 
 public interface FeedPage {
 
-    MessagePage openMessagePage();
+    DialogPage openDialogPage();
 
     ProfilePage openPage(String url);
 }

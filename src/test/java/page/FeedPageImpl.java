@@ -18,9 +18,9 @@ public class FeedPageImpl extends Page implements FeedPage {
     }
 
     @Override
-    public MessagePage openMessagePage() {
+    public DialogPage openDialogPage() {
         Utils.click(MSG_TOOLBAR_BUTTON);
-        return new MessagePageImpl();
+        return new DialogPageImpl();
     }
 
     @Override
