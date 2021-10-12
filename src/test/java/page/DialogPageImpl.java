@@ -5,28 +5,25 @@ import org.openqa.selenium.By;
 import page.base.Page;
 import sources.Utils;
 
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class DialogPageImpl extends Page implements DialogPage {
 
-    private final static By INPUT_BUTTON = By.xpath(".//*[@data-tsid='write_msg_input']");
+    private final static By MSG_INPUT = By.xpath(".//*[@data-tsid='write_msg_input']");
+    private final static By SEND_BTN = By.xpath(".//*[@data-tsid='button_send']");
     private final static By MSG_COLLECTION = By.xpath(".//*[@data-tsid='message_text']");
 
 
     public DialogPageImpl() {
     }
 
-    @Override
-    public void enterMessage(String msg) {
-        $(INPUT_BUTTON).setValue(msg);
-    }
 
     @Override
-    public String sendMessage() {
-        String msg = $(INPUT_BUTTON).getText();
-        $(INPUT_BUTTON).pressEnter();
-        return msg;
+    public void sendMessage(String msg) {
+        $(MSG_INPUT).setValue(msg);
+        Utils.click(SEND_BTN);
     }
 
     @Override
@@ -42,6 +39,7 @@ public class DialogPageImpl extends Page implements DialogPage {
 
     @Override
     protected void check() {
-        Utils.checkPresentAndVisibility("", INPUT_BUTTON);
+        Utils.checkPresentAndVisibility("", MSG_INPUT);
+        Utils.checkPresentAndVisibility("", SEND_BTN);
     }
 }

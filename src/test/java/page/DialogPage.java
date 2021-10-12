@@ -2,9 +2,7 @@ package page;
 
 public interface DialogPage {
 
-    void enterMessage(String msg);
-
-    String sendMessage();
+    void sendMessage(String msg);
 
     boolean isMessageExists(String msg);
 

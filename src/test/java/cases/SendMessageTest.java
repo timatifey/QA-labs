@@ -15,7 +15,8 @@ public class SendMessageTest extends BaseTest {
 
         ProfilePage bot2ProfilePage = Navigate.openProfilePage(BOT1.getUsername(), BOT1.getPassword(), BOT2_PROFILE_URL);
         dialogPage = bot2ProfilePage.openDialogWithThisProfile();
-        String messageText = dialogPage.sendMessage();
+        String messageText = "Hello";
+        dialogPage.sendMessage(messageText);
 
         Navigate.logOut();
 
