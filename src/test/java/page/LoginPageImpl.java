@@ -12,6 +12,7 @@ public class LoginPageImpl extends Page implements LoginPage {
     private final static By EMAIL_FIELD = byXpath(".//*[@id='field_email']");
     private final static By PASSWORD_FIELD = byXpath(".//*[@id='field_password']");
     private final static By SIGN_IN_BUTTON = byXpath(".//*[@data-l='t,sign_in']");
+    private final static By GO_LOGIN_BUTTON = byXpath(".//*[@data-l='t,go_to_login_form']");
 
     public LoginPageImpl() {
         super();
@@ -19,13 +20,16 @@ public class LoginPageImpl extends Page implements LoginPage {
 
     @Override
     protected void check() {
-        Utils.checkPresentAndVisibility("EMAIL_FIELD isn't visible", EMAIL_FIELD);
+       /* Utils.checkPresentAndVisibility("EMAIL_FIELD isn't visible", EMAIL_FIELD);
         Utils.checkPresentAndVisibility("", PASSWORD_FIELD);
-        Utils.checkPresentAndVisibility("", SIGN_IN_BUTTON);
+        Utils.checkPresentAndVisibility("", SIGN_IN_BUTTON);*/
     }
 
     @Override
     public FeedPage login(String login, String password) {
+        if ($(GO_LOGIN_BUTTON).isDisplayed()) {
+            $(GO_LOGIN_BUTTON).click();
+        }
         Utils.sendKeys(EMAIL_FIELD, login);
         Utils.sendKeys(PASSWORD_FIELD, password);
         Utils.click(SIGN_IN_BUTTON);
